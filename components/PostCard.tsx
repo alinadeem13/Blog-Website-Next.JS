@@ -6,6 +6,7 @@ interface Post {
   title: string;
   date: string;
   excerpt: string;
+  image?: string;
 }
 
 // Define the props for the PostCard component

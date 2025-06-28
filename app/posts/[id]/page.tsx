@@ -3,6 +3,7 @@ import { getPostData } from "@/lib/posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { marked } from "marked";
+import Image from "next/image";
 
 export default async function Post({ params }: { params: Promise<{ id: string }> }) {
   // Await the params object
@@ -19,7 +20,9 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
       {/* Display blog image in the center */}
       {post.image && (
         <div className="w-full max-w-3xl">
-          <img
+          <Image
+            width={1200} // Set appropriate width
+            height={600} // Set appropriate height
             src={post.image}
             alt={post.title}
             className="w-full h-auto object-cover mb-8 rounded-lg"
